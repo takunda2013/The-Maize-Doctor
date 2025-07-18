@@ -1,0 +1,9 @@
+come up with a beautiful and simple dark themed with green touches for a mobile app
+
+that is to be used by farmers offline to scan maize leaf images and get predictions. The app is to handle smooth progress of leaf classification and the app should be a world standard
+
+that which has value to clients and farmers.
+
+Lets desgin the UI and UX.
+
+remeber a smooth design, smooth colors.
