@@ -1,9 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:maize_doctor/constants/constants.dart';
 import 'package:maize_doctor/helpers/widgets/home_cards.dart';
+import 'package:maize_doctor/screens/settings.dart';
 
-class DoctorAppScreen extends StatelessWidget {
-  const DoctorAppScreen({super.key});
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  @override
+  void initState() {
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -44,13 +56,27 @@ class DoctorAppScreen extends StatelessWidget {
                         size: 24,
                       ),
                       SizedBox(width: 12),
-                      Container(
-                        padding: EdgeInsets.all(8),
-                        decoration: BoxDecoration(
-                          color: MyConstants.toneColor,
-                          borderRadius: BorderRadius.circular(8),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => MySettings(),
+                            ),
+                          );
+                        },
+                        child: Container(
+                          padding: EdgeInsets.all(8),
+                          decoration: BoxDecoration(
+                            color: MyConstants.toneColor,
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          child: Icon(
+                            Icons.menu,
+                            color: Colors.black,
+                            size: 20,
+                          ),
                         ),
-                        child: Icon(Icons.menu, color: Colors.black, size: 20),
                       ),
                     ],
                   ),
@@ -219,25 +245,4 @@ class DoctorAppScreen extends StatelessWidget {
       ),
     );
   }
-
-  // Widget _buildCategoryChip(String label, bool isSelected) {
-  //   return Container(
-  //     padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-  //     decoration: BoxDecoration(
-  //       color:
-  //           isSelected
-  //               ? MyConstants.toneColor
-  //               : MyConstants.secondaryBackgroundColor,
-  //       borderRadius: BorderRadius.circular(20),
-  //     ),
-  //     child: Text(
-  //       label,
-  //       style: TextStyle(
-  //         color: isSelected ? Colors.black : Colors.grey[400],
-  //         fontSize: 14,
-  //         fontWeight: FontWeight.w500,
-  //       ),
-  //     ),
-  //   );
-  // }
 }

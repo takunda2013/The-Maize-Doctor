@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:maize_doctor/constants/constants.dart';
+import 'package:maize_doctor/screens/scan.dart';
 
 class HomeCards extends StatefulWidget {
   final String imageUrl;
@@ -26,6 +27,10 @@ class _HomeCardsState extends State<HomeCards> {
         setState(() {
           tapped = true;
         });
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => Scan()),
+        );
         await Future.delayed(Duration(milliseconds: 30));
         setState(() {
           tapped = false;
